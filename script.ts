@@ -8,25 +8,31 @@ async function main() {
   //     email: "alice@prisma.io",
   //   },
   // });
+  const user = await prisma.user.create({
+    data: {
+      name: "Bob",
+      email: "bob@prisma.io",
+    },
+  });
   // console.log("Created user:", user);
 
   // Create post
   // const post = await prisma.post.create({
   //   data: {
   //     title: "ほげ",
-  //     authorId: 2
+  //     authorId: 3
   //   }
   // })
   // console.log(post)
 
   // Delete User
   // cascadeの場合はPostも全部消える
-  const u = await prisma.user.delete({
-    where: {
-      id: 2,
-    }
-  })
-  console.log(u)
+  // const u = await prisma.user.delete({
+  //   where: {
+  //     id: 2,
+  //   }
+  // })
+  // console.log(u)
 
   // const p = await prisma.post.delete({
   //   where: {
